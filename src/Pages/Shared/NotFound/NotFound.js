@@ -18,7 +18,6 @@ const NotFound = () => {
                 </p>
                 <div className="btns">
                     <Nav.Link as={Link} to="/">Return Home</Nav.Link>
-                    {/* <a href="https://www.codingnepalweb.com/">report problem</a> */}
                 </div>
             </div>
         </div>
