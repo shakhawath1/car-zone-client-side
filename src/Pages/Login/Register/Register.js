@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 // import SocialLogin from '../SocialLogin/SocialLogin';
 
 
@@ -74,7 +75,7 @@ const Register = () => {
             <p className='text-center'>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
 
             {/* social login options */}
-            {/* <SocialLogin></SocialLogin> */}
+            <SocialLogin></SocialLogin>
 
         </div>
     );
