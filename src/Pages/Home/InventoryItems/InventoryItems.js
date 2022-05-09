@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import useCars from '../../../hooks/LoadCars/useCars';
 import Cars from '../Cars/Cars';
 
 const InventoryItems = () => {
-    const [cars, setCars] = useState([]);
+    const [cars] = useCars();
+    console.log(cars)
 
-    useEffect(() => {
-        fetch('http://localhost:5000/cars/')
-            .then(res => res.json())
-            .then(data => setCars(data));
-    }, [])
     return (
         <div className="container">
             <h2 className='mt-5 text-center'>Inventory Items</h2>
