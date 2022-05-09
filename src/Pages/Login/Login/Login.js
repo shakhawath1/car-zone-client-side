@@ -68,7 +68,7 @@ const Login = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2'>Please Login</h2>
+            <h2 className='text-primary text-center mt-2'>Please Log In</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
@@ -76,12 +76,12 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button variant="primary w-50 mx-auto d-block mb-2" type="submit">
-                    Login
+                <Button variant="primary sm-w-75 w-50 mx-auto d-block mb-2" type="submit">
+                    Log In
                 </Button>
             </Form>
             {errorElement}
-            <p className='text-center'>New to Car Zone? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p className='text-center'>Not a member? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Register</Link> </p>
             <p className='text-center'>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
 
             {/* social login options */}
@@ -89,7 +89,7 @@ const Login = () => {
 
             {/* password reset toast  */}
             <ToastContainer />
-        </div>
+        </div >
     );
 };
 

@@ -17,7 +17,7 @@ const Cars = ({ service }) => {
                     <p className="card-text">{service_info}</p>
                 </div>
 
-                <button onClick={() => navigateToCheckout(serviceName)} className='btn checkout-btn'>Checkout</button>
+                <button onClick={() => navigateToCheckout(serviceName)} className='btn checkout-btn'>Update</button>
 
             </div>
         </div>

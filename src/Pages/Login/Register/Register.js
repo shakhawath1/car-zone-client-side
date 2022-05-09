@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
-// import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Register = () => {
@@ -54,7 +53,7 @@ const Register = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2'>Please Login</h2>
+            <h2 className='text-primary text-center mt-2'>Please Register</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={nameRef} type="text" placeholder="Name" required />
@@ -72,7 +71,7 @@ const Register = () => {
                 </Button>
             </Form>
             {errorElement}
-            <p className='text-center'>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
+            <p className='text-center'>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Log In</Link> </p>
 
             {/* social login options */}
             <SocialLogin></SocialLogin>
