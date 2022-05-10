@@ -1,10 +1,10 @@
 # Car Zone
 
-## [Live Website Link](https://bicycle-paradise.web.app/)
+## [Live Website Link](https://car-zone-e9458.web.app/)
 
-Private client-side repository link: [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Swoad-11](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Swoad-11)
+Private client-side repository link: [ https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-shakhawath1]( https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-shakhawath1)
 
-Private server-side repository link: [https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Swoad-11](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Swoad-11)
+Private server-side repository link: [https://github.com/shakhawath1/car-zone-server-side](https://github.com/shakhawath1/car-zone-server-side)
 
 ## Description
 This is an website of an car warehouse.
