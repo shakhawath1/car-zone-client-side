@@ -52,7 +52,7 @@ const Update = () => {
                 alert('Added successfully!!!');
                 event.target.reset();
             })
-    }
+    };
 
 
     return (

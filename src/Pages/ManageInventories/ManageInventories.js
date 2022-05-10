@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import useCars from '../../hooks/LoadCars/useCars';
 import AllCars from '../Home/InventoryItems/AllCars';
 
@@ -5,7 +6,11 @@ import AllCars from '../Home/InventoryItems/AllCars';
 const ManageInventories = () => {
 
     const [cars] = useCars();
+    const navigate = useNavigate();
 
+    const navigateToAddNewCar = id => {
+        navigate('/addCar');
+    }
 
 
     return (
@@ -16,7 +21,8 @@ const ManageInventories = () => {
                     cars.map(car => <AllCars key={car._id} car={car}></AllCars>)
                 }
             </div >
-
+            <div className='mx-auto'>
+                <button onClick={() => navigateToAddNewCar()} className='btn checkout-btn mx-5 px-5'>Add New Car</button></div>
         </div>
     );
 };
