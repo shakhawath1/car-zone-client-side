@@ -1,13 +1,15 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import InventoryItems from '../InventoryItems/InventoryItems';
+import Team from '../Team/Team';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Banner></Banner>
             <InventoryItems></InventoryItems>
-        </div>
+            <Team></Team>
+        </>
     );
 };
 

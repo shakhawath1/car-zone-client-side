@@ -8,14 +8,11 @@ const MyCar = () => {
     const [myCar, setMyCar] = useState([]);
 
     useEffect(() => {
-        // const getMyCars = () => {
         const email = user.email;
-        const url = `http://localhost:5000/cars?email=${email}`;
+        const url = `https://mysterious-bayou-78729.herokuapp.com/cars?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyCar(data));
-        // }
-        // getMyCars();
 
     }, [user])
 
@@ -24,9 +21,9 @@ const MyCar = () => {
 
 
     return (
-        <div>
+        <div className='mx-auto'>
             <h3 className='text-center my-3'>My Cars</h3>
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4" >
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4 d-flex justify-content-center" >
                 {
                     newCar.map(car => <SortedCar key={car._id} car={car}></SortedCar>)
                 }

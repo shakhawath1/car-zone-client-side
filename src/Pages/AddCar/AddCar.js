@@ -25,7 +25,7 @@ const AddCar = () => {
                 const newCar = [...cars, data];
                 setCars(newCar);
                 console.log(result)
-            })
+            });
     };
 
     return (

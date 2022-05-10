@@ -36,8 +36,10 @@ const AllCars = ({ car }) => {
                     <p className="card-text">{supplier}</p>
                 </div>
 
-                <button onClick={() => navigateToUpdate(_id)} className='btn checkout-btn'>Update</button>
-                <button onClick={() => handleDelete(_id)} className='btn checkout-btn'>Delete</button>
+                <div className='d-flex mx-auto '>
+                    <button onClick={() => navigateToUpdate(_id)} className='btn checkout-btn mx-2'>Update</button>
+                    <button onClick={() => handleDelete(_id)} className='btn checkout-btn mx-2'>Delete</button>
+                </div>
 
             </div>
         </div>

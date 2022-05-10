@@ -32,26 +32,40 @@ const Update = () => {
     // restock car
     const handleRestock = event => {
         event.preventDefault();
-        const quantity = event.target.quantity.value;
-        console.log(quantity)
 
-        const updatedQuantity = { quantity };
+        const inputQuantity = document.getElementById('inputQuantity');
+        const newQuantity = inputQuantity.value;
 
-        // send data to the server
-        const url = `http://localhost:5000/cars/${carId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updatedQuantity)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                alert('Added successfully!!!');
-                event.target.reset();
+        let quantity = document.getElementById('quantity');
+        let quantityNumber = quantity.innerText;
+        if (newQuantity > 0) {
+            let totalQuantity = parseInt(quantityNumber) + parseInt(newQuantity);
+            quantity.innerText = totalQuantity;
+            let finalValue = totalQuantity.toString();
+
+            const updatedQuantity = finalValue;
+            console.log(updatedQuantity);
+            // send data to the server
+            const url = `http://localhost:5000/cars/${carId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedQuantity)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    alert('Added successfully!!!');
+                    event.target.reset();
+                })
+        }
+
+        //const quantity = event.target.quantity.value;
+
+
+
     };
 
 
@@ -75,7 +89,7 @@ const Update = () => {
                 <input type="number" name="quantity" placeholder='Add Quantity' required />
                 <br />
                 <br />
-                <input type="submit" value="Restock" />
+                <input type="submit" name='quantity' value="Restock" />
             </form>
         </div>
     );
