@@ -14,6 +14,46 @@ const Update = () => {
             .then(data => setCar(data));
     }, [carId]);
 
+    const decreaseItem = () => {
+        let quantity = document.getElementById('quantity');
+
+        let quantityNumber = quantity.innerText;
+
+        let newQuantity = parseInt(quantityNumber) - 1;
+        if (newQuantity > 0) {
+            quantity.innerText = newQuantity;
+        }
+        else {
+            const zero = 0;
+            quantity.innerText = zero;
+        }
+    }
+
+    // restock car
+    const handleRestock = event => {
+        event.preventDefault();
+        const quantity = event.target.quantity.value;
+        console.log(quantity)
+
+        const updatedQuantity = { quantity };
+
+        // send data to the server
+        const url = `http://localhost:5000/cars/${carId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                alert('Added successfully!!!');
+                event.target.reset();
+            })
+    }
+
 
     return (
         <div className="col w-50 mx-auto">
@@ -26,12 +66,17 @@ const Update = () => {
                     <h6 className="card-title">Id: {_id}</h6>
                     <h6 className="card-title">Price: {price}</h6>
                     <p className="card-text">{description}</p>
-                    <p className="card-text">Quantity: {quantity}</p>
+                    <p className="card-text">Quantity: <span id='quantity'>{quantity}</span></p>
                 </div>
-
-                <button className='btn'>Delivered</button>
-
+                <button onClick={decreaseItem} className='btn'>Delivered</button>
             </div>
+            <br />
+            <form onSubmit={handleRestock}>
+                <input type="number" name="quantity" placeholder='Add Quantity' required />
+                <br />
+                <br />
+                <input type="submit" value="Restock" />
+            </form>
         </div>
     );
 };
