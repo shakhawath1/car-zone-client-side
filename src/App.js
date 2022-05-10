@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import AddCar from './Pages/AddCar/AddCar';
+import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
@@ -27,6 +28,7 @@ function App() {
         <Route path='/addCar' element={<AddCar></AddCar>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
