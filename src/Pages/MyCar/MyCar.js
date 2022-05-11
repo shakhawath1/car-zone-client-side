@@ -10,11 +10,13 @@ const MyCar = () => {
     useEffect(() => {
         const email = user.email;
         const url = `https://mysterious-bayou-78729.herokuapp.com/cars?email=${email}`;
+        console.log(url)
         fetch(url)
             .then(res => res.json())
             .then(data => setMyCar(data));
 
     }, [user])
+
 
     const newCar = myCar.filter(car => car.email === user.email);
     // setMyCar(newCar);
