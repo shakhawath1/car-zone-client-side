@@ -76,7 +76,7 @@ const Update = () => {
                 <input type="number" name="quantity" placeholder='Add Quantity' required />
                 <br />
                 <br />
-                <input type="submit" name='quantity' value="Restock" />
+                <input type="submit" value="Restock" />
             </form>
         </div>
     );
