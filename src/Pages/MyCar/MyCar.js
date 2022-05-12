@@ -33,7 +33,7 @@ const MyCar = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    const remaining = newCar.filter(product => product._id !== id);
+                    const remaining = newCar.filter(car => car._id !== id);
                     setMyCar(remaining);
                 });
         };
