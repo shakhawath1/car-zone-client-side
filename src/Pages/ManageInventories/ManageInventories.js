@@ -25,7 +25,7 @@ const ManageInventories = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    const remaining = cars.filter(product => product._id !== id);
+                    const remaining = cars.filter(car => car._id !== id);
                     setCars(remaining);
                 });
         };
