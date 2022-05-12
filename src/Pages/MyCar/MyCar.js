@@ -28,11 +28,10 @@ const MyCar = () => {
             const url = `https://mysterious-bayou-78729.herokuapp.com/cars/${id}`;
             console.log(url)
             fetch(url, {
-                method: 'put'
+                method: 'PUT'
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const remaining = newCar.filter(car => car._id !== id);
                     setMyCar(remaining);
                 });
