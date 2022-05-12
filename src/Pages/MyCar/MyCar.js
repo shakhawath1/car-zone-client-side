@@ -25,7 +25,7 @@ const MyCar = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://mysterious-bayou-78729.herokuapp.com/car/${id}`;
+            const url = `https://mysterious-bayou-78729.herokuapp.com/cars/${id}`;
             console.log(url)
             fetch(url, {
                 method: 'DELETE'
