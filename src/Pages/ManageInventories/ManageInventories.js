@@ -20,7 +20,7 @@ const ManageInventories = () => {
             const url = `https://mysterious-bayou-78729.herokuapp.com/cars/${id}`;
             console.log(url)
             fetch(url, {
-                method: 'put'
+                method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {

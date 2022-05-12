@@ -25,13 +25,14 @@ const MyCar = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://mysterious-bayou-78729.herokuapp.com/cars/${id}`;
+            const url = `https://mysterious-bayou-78729.herokuapp.com/car/${id}`;
             console.log(url)
             fetch(url, {
-                method: 'PUT'
+                method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data)
                     const remaining = newCar.filter(car => car._id !== id);
                     setMyCar(remaining);
                 });
