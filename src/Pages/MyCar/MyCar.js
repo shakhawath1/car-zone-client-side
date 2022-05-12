@@ -21,13 +21,30 @@ const MyCar = () => {
     const newCar = myCar.filter(car => car.email === user.email);
     // setMyCar(newCar);
 
+    // delete item
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `https://mysterious-bayou-78729.herokuapp.com/cars/${id}`;
+            console.log(url)
+            fetch(url, {
+                method: 'put'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = newCar.filter(product => product._id !== id);
+                    setMyCar(remaining);
+                });
+        };
+    };
 
     return (
         <div className='mx-auto'>
             <h3 className='text-center my-3'>My Cars</h3>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4 d-flex justify-content-center" >
                 {
-                    newCar.map(car => <SortedCar key={car._id} car={car}></SortedCar>)
+                    newCar.map(car => <SortedCar key={car._id} car={car} handleDelete={handleDelete}></SortedCar>)
                 }
             </div >
         </div>
