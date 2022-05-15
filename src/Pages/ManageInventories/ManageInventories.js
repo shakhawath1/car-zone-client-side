@@ -33,6 +33,9 @@ const ManageInventories = () => {
                     });
             };
         }
+        else {
+            navigate('/login')
+        }
     };
 
     return (
