@@ -11,27 +11,31 @@ const AddCar = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = 'https://mysterious-bayou-78729.herokuapp.com/cars';
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = 'https://mysterious-bayou-78729.herokuapp.com/cars';
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(result => {
 
-                const newCar = [...cars, data];
-                setCars(newCar);
-                console.log(result)
-            });
+                    const newCar = [...cars, data];
+                    setCars(newCar);
+                    console.log(result)
+                });
+        }
+
     };
 
     return (
         <div className='p-5 text-center'>
             <h3>Add Car</h3>
-            <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+            <form className='d-flex flex-column form-control' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} required />
                 <textarea className='mb-2' placeholder='Description' {...register("description")} required />
                 <input className='mb-2' type="text" placeholder='Supplier'  {...register("supplier")} required />

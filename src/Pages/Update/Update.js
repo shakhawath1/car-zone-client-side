@@ -49,7 +49,7 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                setCar(data)
                 alert('Added successfully!!!');
                 event.target.reset();
             })
