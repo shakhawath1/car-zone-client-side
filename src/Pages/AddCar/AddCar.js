@@ -7,7 +7,7 @@ const AddCar = () => {
     const [user] = useAuthState(auth);
     const [cars, setCars] = useState([])
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data);
@@ -26,7 +26,8 @@ const AddCar = () => {
 
                     const newCar = [...cars, data];
                     setCars(newCar);
-                    console.log(result)
+                    console.log(result);
+                    reset();
                 });
         }
 
