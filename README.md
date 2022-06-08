@@ -2,7 +2,7 @@
 
 ## [Live Website Link](https://car-zone-e9458.web.app/)
 
-Private client-side repository link: [ https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-shakhawath1]( https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-shakhawath1)
+Private client-side repository link: [https://github.com/shakhawath1/car-zone-client-side](https://github.com/shakhawath1/car-zone-client-side)
 
 Private server-side repository link: [https://github.com/shakhawath1/car-zone-server-side](https://github.com/shakhawath1/car-zone-server-side)
 
